@@ -6,9 +6,7 @@
 
 This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings validation capabilities to:
 
-// TODO: Update description and example.
-
-- Validate if a field of a form ....
+- Validate if a field of a form is strictly true
 
 How to add it to an existing form validation schema:
 
@@ -18,6 +16,7 @@ We have the following form model:
 const myFormValues = {
   product : 'shoes',
   price: 20,
+  acceptedTerms: true
 }
 ```
 
@@ -27,7 +26,7 @@ We can add a isTrue validation to the myFormValues
 import { isTrue } from '@lemoncode/fonk-is-true-validator';
 
 const validationSchema = {
-  price: [isTrue.validator],
+  acceptedTerms: [isTrue.validator],
 };
 ```
 
@@ -38,7 +37,7 @@ You can customize the error message displayed in two ways:
 ```javascript
 import { isTrue } from '@lemoncode/fonk-is-true-validator';
 
-isTrue.setErrorMessage('El campo debe de ser numérico');
+isTrue.setErrorMessage('Debe aceptar los términos y condiciones');
 ```
 
 - Locally just override the error message for this validationSchema:
