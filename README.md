@@ -14,7 +14,7 @@ We have the following form model:
 
 ```
 const myFormValues = {
-  product : 'shoes',
+  product: 'shoes',
   price: 20,
   acceptedTerms: true
 }
@@ -26,7 +26,9 @@ We can add a isTrue validation to the myFormValues
 import { isTrue } from '@lemoncode/fonk-is-true-validator';
 
 const validationSchema = {
-  acceptedTerms: [isTrue.validator],
+  field: {
+    acceptedTerms: [isTrue.validator],
+  },
 };
 ```
 
@@ -46,12 +48,14 @@ isTrue.setErrorMessage('Debe aceptar los términos y condiciones');
 import { isTrue } from '@lemoncode/fonk-is-true-validator';
 
 const validationSchema = {
-  price: [
-    {
-      validator: isTrue.validator,
-      message: 'Error message only updated for the validation schema',
-    },
-  ],
+  field: {
+    price: [
+      {
+        validator: isTrue.validator,
+        message: 'Error message only updated for the validation schema',
+      },
+    ],
+  },
 };
 ```
 
