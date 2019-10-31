@@ -8,6 +8,12 @@ This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings val
 
 - Validate if a field of a form is strictly true
 
+How to install it:
+
+```bash
+npm install @lemoncode/fonk-is-true-validator --save
+```
+
 How to add it to an existing form validation schema:
 
 We have the following form model:
